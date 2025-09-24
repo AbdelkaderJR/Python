@@ -35,17 +35,17 @@ print(circumference)
 
 #- Ask the user for his name then confirm that he has entered his name (not an empty string/integers). then proceed to ask him for his email and print all this data
 
-while True:
-    name = input("Enter your name: ")
-    if name.strip().isalpha():   
-        break
-    else:
-        print("Invalid name, please enter again")
-
+name = input("Enter your name: ")
 email = input("Enter your email: ")
 
-print(name)
-print(email)
+if not name.strip().isalpha():
+    print("Name must contain only letters.")
+elif "@" not in email or "." not in email:
+    print("Invalid email, Email must contain '@' and . ")
+else:
+    print("Name:", name)
+    print("Email:", email)
+
 
 #	- Write a program that prints the number of times the substring 'iti' occurs in a string
 
